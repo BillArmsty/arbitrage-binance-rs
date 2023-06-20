@@ -1,0 +1,189 @@
+2023-06-20 15:15:36 - INFO: Configuring websocket route
+2023-06-20 15:15:36 - INFO: Connecting to binance stream...
+2023-06-20 15:15:36 - INFO: Subscribing to binance: wss://stream.binance.com:9443/stream?streams=ethbtc@depth5@100ms/bnbeth@depth5@100ms/bnbbtc@depth5@100ms/sushibtc@depth5@100ms/sushibnb@depth5@100ms/solbtc@depth5@100ms/solbnb@depth5@100ms/xrpbtc@depth5@100ms/xrpeth@depth5@100ms/xrpbnb@depth5@100ms/adabnb@depth5@100ms/adabtc@depth5@100ms/adaeth@depth5@100ms
+2023-06-20 15:15:36 - DEBUG: Trying to contact wss://stream.binance.com:9443/stream?streams=ethbtc@depth5@100ms/bnbeth@depth5@100ms/bnbbtc@depth5@100ms/sushibtc@depth5@100ms/sushibnb@depth5@100ms/solbtc@depth5@100ms/solbnb@depth5@100ms/xrpbtc@depth5@100ms/xrpeth@depth5@100ms/xrpbnb@depth5@100ms/adabnb@depth5@100ms/adabtc@depth5@100ms/adaeth@depth5@100ms at 52.194.85.220:9443...
+2023-06-20 15:15:36 - DEBUG: add_pem_file processed 137 valid and 0 invalid certs
+2023-06-20 15:15:36 - DEBUG: No cached session for DNSNameRef("stream.binance.com")
+2023-06-20 15:15:36 - DEBUG: Not resuming any session
+2023-06-20 15:15:37 - DEBUG: ALPN protocol is None
+2023-06-20 15:15:37 - DEBUG: Using ciphersuite TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+2023-06-20 15:15:37 - DEBUG: Server supports tickets
+2023-06-20 15:15:37 - DEBUG: ECDHE curve is ECParameters { curve_type: NamedCurve, named_group: secp256r1 }
+2023-06-20 15:15:37 - DEBUG: Server DNS name is DNSName("stream.binance.com")
+2023-06-20 15:15:37 - DEBUG: Session saved
+2023-06-20 15:15:38 - DEBUG: Client handshake done.
+2023-06-20 15:15:38 - INFO: Connected to binance stream.
+2023-06-20 15:15:38 - DEBUG: HTTP status code: 101 Switching Protocols
+2023-06-20 15:15:38 - DEBUG: Response headers:
+2023-06-20 15:15:38 - DEBUG: - date: "Tue, 20 Jun 2023 15:15:38 GMT"
+2023-06-20 15:15:38 - DEBUG: - connection: "upgrade"
+2023-06-20 15:15:38 - DEBUG: - upgrade: "websocket"
+2023-06-20 15:15:38 - DEBUG: - sec-websocket-accept: "Z/kQ6Ioc9TbLSwywfcmfvdSYN/k="
+2023-06-20 15:15:38 - INFO: Starting update loop
+2023-06-20 15:15:38 - INFO: Starting server
+2023-06-20 15:15:38 - INFO: Server::run; addr=127.0.0.1:8000
+2023-06-20 15:15:38 - INFO: listening on http://127.0.0.1:8000
+2023-06-20 15:15:38 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:38 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:38 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:39 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:40 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:41 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:42 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:43 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:44 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:45 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:46 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:47 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:48 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:49 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:50 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:51 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:52 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:53 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:54 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:55 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:55 - DEBUG: No clients connected, skip sending data
+2023-06-20 15:15:55 - DEBUG: No clients connected, skip sending data
