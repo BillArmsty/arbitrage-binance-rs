@@ -1,11 +1,12 @@
-use crate::{Client, Clients};
-use futures::{FutureExt, StreamExt};
-use log::{error, info};
+use crate::{ Client, Clients };
+use futures::{ FutureExt, StreamExt };
+use log::{ error, info };
 use tokio::sync::mpsc;
 use tokio_stream::wrappers::UnboundedReceiverStream;
 use uuid::Uuid;
-use warp::ws::{Message, WebSocket};
+use warp::ws::{ Message, WebSocket };
 
+//Logic for handling the WebSocket connection and for handling messages from the client.
 pub async fn client_connection(ws: WebSocket, clients: Clients) {
     info!("establishing client connection... {:?}", ws);
 
@@ -14,11 +15,14 @@ pub async fn client_connection(ws: WebSocket, clients: Clients) {
 
     let client_rcv = UnboundedReceiverStream::new(client_rcv);
 
-    tokio::task::spawn(client_rcv.forward(client_ws_sender).map(|result| {
-        if let Err(e) = result {
-            error!("error sending websocket msg: {}", e);
-        }
-    }));
+    //Spawn a new task that keeps the client_ws_sender stream open until the client has disconnected.
+    tokio::task::spawn(
+        client_rcv.forward(client_ws_sender).map(|result| {
+            if let Err(e) = result {
+                error!("error sending websocket msg: {}", e);
+            }
+        })
+    );
 
     let uuid = Uuid::new_v4().to_simple().to_string();
 
@@ -29,6 +33,7 @@ pub async fn client_connection(ws: WebSocket, clients: Clients) {
 
     clients.lock().await.insert(uuid.clone(), new_client);
 
+    //While loop handles receiving messages from the client
     while let Some(result) = client_ws_rcv.next().await {
         let msg = match result {
             Ok(msg) => msg,
@@ -37,6 +42,7 @@ pub async fn client_connection(ws: WebSocket, clients: Clients) {
                 break;
             }
         };
+        //If a message is received, while loop will call client_msg to do further processing of the message
         client_msg(&uuid, msg, &clients).await;
     }
 
@@ -49,9 +55,12 @@ async fn client_msg(client_id: &str, msg: Message, clients: &Clients) {
 
     let message = match msg.to_str() {
         Ok(v) => v,
-        Err(_) => return,
+        Err(_) => {
+            return;
+        }
     };
 
+    //Convert msg to a string, and if successful, responds to it if the message is “ping”
     if message == "ping" || message == "ping\n" {
         let locked = clients.lock().await;
         match locked.get(client_id) {
@@ -61,8 +70,10 @@ async fn client_msg(client_id: &str, msg: Message, clients: &Clients) {
                     let _ = sender.send(Ok(Message::text("pong")));
                 }
             }
-            None => return,
+            None => {
+                return;
+            }
         }
         return;
-    };
+    }
 }
