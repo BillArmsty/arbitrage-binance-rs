@@ -1,9 +1,9 @@
-use log::{debug, info};
+use log::{ debug, info };
 use log4rs;
-use std::{collections::HashMap, convert::Infallible, sync::Arc};
-use tokio::sync::{mpsc, Mutex};
+use std::{ collections::HashMap, convert::Infallible, sync::Arc };
+use tokio::sync::{ mpsc, Mutex };
 use url::Url;
-use warp::{ws::Message, Filter, Rejection};
+use warp::{ ws::Message, Filter, Rejection };
 
 mod config;
 mod handler;
@@ -14,25 +14,26 @@ mod ws;
 static BINANCE_WS_API: &str = "wss://stream.binance.com:9443";
 
 #[derive(Debug, Clone)]
+//Client struct represents information about a connected client
 pub struct Client {
     pub client_id: String,
     pub sender: Option<mpsc::UnboundedSender<std::result::Result<Message, warp::Error>>>,
 }
 
+//type Clients represents a thread safe, reference tracked, hashmap that keeps track of the connected clients.
 type Clients = Arc<Mutex<HashMap<String, Client>>>;
 type Result<T> = std::result::Result<T, Rejection>;
 
 fn get_binance_streams_url(
     depth_streams: &Vec<String>,
     update_interval: u32,
-    results_limit: u32,
+    results_limit: u32
 ) -> Url {
     let mut depth_streams_parts: Vec<String> = vec![];
     for stream in depth_streams {
-        depth_streams_parts.push(format!(
-            "{}@depth{}@{}ms",
-            stream, results_limit, update_interval
-        ));
+        depth_streams_parts.push(
+            format!("{}@depth{}@{}ms", stream, results_limit, update_interval)
+        );
     }
 
     let depth_streams_joined = depth_streams_parts.join("/");
@@ -50,7 +51,8 @@ async fn main() {
     let clients: Clients = Arc::new(Mutex::new(HashMap::new()));
 
     info!("Configuring websocket route");
-    let ws_route = warp::path("ws")
+    let ws_route = warp
+        ::path("ws")
         .and(warp::ws())
         .and(with_clients(clients.clone()))
         .and_then(handler::ws_handler);
@@ -61,7 +63,7 @@ async fn main() {
     let binance_url = get_binance_streams_url(
         &app_config.depth_streams,
         app_config.update_interval,
-        app_config.results_limit,
+        app_config.results_limit
     );
 
     info!("Subscribing to binance: {}", binance_url);
