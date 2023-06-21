@@ -67,6 +67,7 @@ async fn main() {
     );
 
     info!("Subscribing to binance: {}", binance_url);
+    //Use Connect from tungstenite to connect to Binance Websocket API
     let (socket, response) = tungstenite::connect(binance_url).expect("Can't connect.");
     info!("Connected to binance stream.");
     debug!("HTTP status code: {}", response.status());

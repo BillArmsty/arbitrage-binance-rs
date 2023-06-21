@@ -1,13 +1,9 @@
-use crate::{
-    config::AppConfig,
-    models::{self, DepthStreamWrapper},
-    Clients,
-};
-use log::{debug, error, info};
+use crate::{ config::AppConfig, models::{ self, DepthStreamWrapper }, Clients };
+use log::{ debug, error, info };
 use std::collections::HashMap;
 use tokio::time::Duration;
 
-use tungstenite::{client::AutoStream, WebSocket};
+use tungstenite::{ client::AutoStream, WebSocket };
 use warp::ws::Message;
 
 pub async fn main_worker(clients: Clients, config: AppConfig, mut socket: WebSocket<AutoStream>) {
@@ -52,14 +48,9 @@ pub async fn main_worker(clients: Clients, config: AppConfig, mut socket: WebSoc
                 &triangle_config.pairs[0],
                 &triangle_config.pairs[1],
                 &triangle_config.pairs[2],
-                [
-                    &triangle_config.parts[0],
-                    &triangle_config.parts[1],
-                    &triangle_config.parts[2],
-                ],
-                clients.clone(),
-            )
-            .await;
+                [&triangle_config.parts[0], &triangle_config.parts[1], &triangle_config.parts[2]],
+                clients.clone()
+            ).await;
         }
     }
 }
@@ -70,26 +61,20 @@ async fn process_triangle_data(
     mid_pair: &str,
     end_pair: &str,
     triangle: [&str; 3],
-    clients: Clients,
+    clients: Clients
 ) {
-    info!(
-        "processing triangle {:?}: {}->{}->{}",
-        triangle, start_pair, mid_pair, end_pair
-    );
+    info!("processing triangle {:?}: {}->{}->{}", triangle, start_pair, mid_pair, end_pair);
 
-    let data = (
-        pairs_data.get(start_pair),
-        pairs_data.get(mid_pair),
-        pairs_data.get(end_pair),
-    );
+    let data = (pairs_data.get(start_pair), pairs_data.get(mid_pair), pairs_data.get(end_pair));
 
     let (start_pair_data, mid_pair_data, end_pair_data) = match data {
         (Some(s), Some(m), Some(e)) => (s, m, e),
         _ => {
-            info!(
-                "{:?} One or more of the pairs were not found, skipping",
-                (start_pair, mid_pair, end_pair)
-            );
+            info!("{:?} One or more of the pairs were not found, skipping", (
+                start_pair,
+                mid_pair,
+                end_pair,
+            ));
             return;
         }
     };
@@ -102,21 +87,21 @@ async fn process_triangle_data(
             start_pair_data.data.asks[i].price,
             start_pair_data.data.bids[i].price,
             start_pair,
-            triangle[0],
+            triangle[0]
         );
         triangle_profit = calc_triangle_step(
             triangle_profit,
             mid_pair_data.data.asks[i].price,
             mid_pair_data.data.bids[i].price,
             mid_pair,
-            triangle[1],
+            triangle[1]
         );
         triangle_profit = calc_triangle_step(
             triangle_profit,
             end_pair_data.data.asks[i].price,
             end_pair_data.data.bids[i].price,
             end_pair,
-            triangle[2],
+            triangle[2]
         );
 
         let norm_profit = triangle_profit - 1.0;
@@ -132,20 +117,19 @@ async fn process_triangle_data(
         mid_pair_data: mid_pair_data.clone(),
         end_pair_data: end_pair_data.clone(),
         profits,
-        triangle: [
-            triangle[0].to_string(),
-            triangle[1].to_string(),
-            triangle[2].to_string(),
-        ],
+        triangle: [triangle[0].to_string(), triangle[1].to_string(), triangle[2].to_string()],
     };
 
-    clients.lock().await.iter().for_each(|(_, client)| {
-        if let Some(sender) = &client.sender {
-            let _ = sender.send(Ok(Message::text(
-                serde_json::to_string(&triangle_data).unwrap(),
-            )));
-        }
-    });
+    clients
+        .lock().await
+        .iter()
+        .for_each(|(_, client)| {
+            if let Some(sender) = &client.sender {
+                let _ = sender.send(
+                    Ok(Message::text(serde_json::to_string(&triangle_data).unwrap()))
+                );
+            }
+        });
 }
 
 fn calc_triangle_step(
@@ -153,10 +137,10 @@ fn calc_triangle_step(
     ask_price: f64,
     bid_price: f64,
     pair_name: &str,
-    triangle_part: &str,
+    triangle_part: &str
 ) -> f64 {
     // subtract trading fee
-    let trade_amount = trade_amount - ((trade_amount / 100.0) * 0.075);
+    let trade_amount = trade_amount - (trade_amount / 100.0) * 0.075;
     // Compare first part of the part to the part of the triangle
     // to determine on what side of the trade we should be
     if pair_name[..triangle_part.len()] == *triangle_part {
