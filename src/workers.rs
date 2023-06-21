@@ -55,6 +55,8 @@ pub async fn main_worker(clients: Clients, config: AppConfig, mut socket: WebSoc
     }
 }
 
+
+//Function that takes HashMap of DepthStreamWrapper and takes 3 coin pairs from it and uses that data to call calc_triangle_step
 async fn process_triangle_data(
     pairs_data: &HashMap<String, DepthStreamWrapper>,
     start_pair: &str,

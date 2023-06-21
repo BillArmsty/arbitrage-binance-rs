@@ -1,5 +1,5 @@
 use serde::de;
-use serde::{Deserialize, Deserializer, Serialize};
+use serde::{ Deserialize, Deserializer, Serialize };
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct OfferData {
@@ -17,10 +17,7 @@ pub struct DepthStreamData {
     pub asks: Vec<OfferData>,
 }
 
-pub fn de_float_from_str<'a, D>(deserializer: D) -> Result<f64, D::Error>
-where
-    D: Deserializer<'a>,
-{
+pub fn de_float_from_str<'a, D>(deserializer: D) -> Result<f64, D::Error> where D: Deserializer<'a> {
     let str_val = String::deserialize(deserializer)?;
     str_val.parse::<f64>().map_err(de::Error::custom)
 }
@@ -32,6 +29,7 @@ pub struct DepthStreamWrapper {
 }
 
 #[derive(Debug, Serialize, Clone)]
+//Data to send to the clients regarding the profit calculation
 pub struct TriangleArbitrageData {
     pub triangle: [String; 3],
     pub profits: Vec<f64>,

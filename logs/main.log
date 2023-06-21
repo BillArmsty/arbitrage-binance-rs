@@ -187,3 +187,53 @@
 2023-06-20 15:15:55 - DEBUG: No clients connected, skip sending data
 2023-06-20 15:15:55 - DEBUG: No clients connected, skip sending data
 2023-06-20 15:15:55 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:07 - INFO: Configuring websocket route
+2023-06-21 10:37:07 - INFO: Connecting to binance stream...
+2023-06-21 10:37:07 - INFO: Subscribing to binance: wss://stream.binance.com:9443/stream?streams=ethbtc@depth5@100ms/bnbeth@depth5@100ms/bnbbtc@depth5@100ms/sushibtc@depth5@100ms/sushibnb@depth5@100ms/solbtc@depth5@100ms/solbnb@depth5@100ms/xrpbtc@depth5@100ms/xrpeth@depth5@100ms/xrpbnb@depth5@100ms/adabnb@depth5@100ms/adabtc@depth5@100ms/adaeth@depth5@100ms
+2023-06-21 10:37:07 - DEBUG: Trying to contact wss://stream.binance.com:9443/stream?streams=ethbtc@depth5@100ms/bnbeth@depth5@100ms/bnbbtc@depth5@100ms/sushibtc@depth5@100ms/sushibnb@depth5@100ms/solbtc@depth5@100ms/solbnb@depth5@100ms/xrpbtc@depth5@100ms/xrpeth@depth5@100ms/xrpbnb@depth5@100ms/adabnb@depth5@100ms/adabtc@depth5@100ms/adaeth@depth5@100ms at 3.114.210.239:9443...
+2023-06-21 10:37:07 - DEBUG: add_pem_file processed 137 valid and 0 invalid certs
+2023-06-21 10:37:07 - DEBUG: No cached session for DNSNameRef("stream.binance.com")
+2023-06-21 10:37:07 - DEBUG: Not resuming any session
+2023-06-21 10:37:08 - DEBUG: ALPN protocol is None
+2023-06-21 10:37:08 - DEBUG: Using ciphersuite TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+2023-06-21 10:37:08 - DEBUG: Server supports tickets
+2023-06-21 10:37:08 - DEBUG: ECDHE curve is ECParameters { curve_type: NamedCurve, named_group: secp256r1 }
+2023-06-21 10:37:08 - DEBUG: Server DNS name is DNSName("stream.binance.com")
+2023-06-21 10:37:08 - DEBUG: Session saved
+2023-06-21 10:37:09 - DEBUG: Client handshake done.
+2023-06-21 10:37:09 - INFO: Connected to binance stream.
+2023-06-21 10:37:09 - DEBUG: HTTP status code: 101 Switching Protocols
+2023-06-21 10:37:09 - DEBUG: Response headers:
+2023-06-21 10:37:09 - DEBUG: - date: "Wed, 21 Jun 2023 10:37:09 GMT"
+2023-06-21 10:37:09 - DEBUG: - connection: "upgrade"
+2023-06-21 10:37:09 - DEBUG: - upgrade: "websocket"
+2023-06-21 10:37:09 - DEBUG: - sec-websocket-accept: "7NXRyeK/eq4NMbzT5/9Dzp1WTbI="
+2023-06-21 10:37:09 - INFO: Starting update loop
+2023-06-21 10:37:09 - INFO: Starting server
+2023-06-21 10:37:09 - INFO: Server::run; addr=127.0.0.1:8000
+2023-06-21 10:37:09 - INFO: listening on http://127.0.0.1:8000
+2023-06-21 10:37:09 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:09 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:09 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:09 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:09 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:10 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:11 - DEBUG: No clients connected, skip sending data
+2023-06-21 10:37:12 - DEBUG: No clients connected, skip sending data

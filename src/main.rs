@@ -58,7 +58,8 @@ async fn main() {
         .and_then(handler::ws_handler);
 
     let routes = ws_route.with(warp::cors().allow_any_origin());
-
+    
+    //connect to the Binance server 
     info!("Connecting to binance stream...");
     let binance_url = get_binance_streams_url(
         &app_config.depth_streams,
@@ -77,6 +78,7 @@ async fn main() {
     }
 
     info!("Starting update loop");
+    //Pass the resulting socket connection to workers::main_worker
     tokio::task::spawn(async move {
         workers::main_worker(clients.clone(), app_config, socket).await;
     });
